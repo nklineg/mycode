@@ -14,7 +14,8 @@ def main():
     """Runtime code. Always indent a function"""
 
     for x in MYCOLORS:
-        newcolor = crayons.{x}
+    
+        newcolor = crayons.x
         print(newcolor(x + ' string'))
 
 # we must call our main function or our code will not run!

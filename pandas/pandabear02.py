@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 import pandas as pd
+from IPython.display import HTML
 
 # these following two lines are for writing to file
 # use this when you are not rendering to a window
@@ -19,8 +20,7 @@ def main():
     # only the first sheet was read into the DF
     movies = pd.read_excel(excel_file)
     
-    # print dir
-    #print(dir(movies))
+    print(dir(movies))
 
     # show the first five rows of our DF
     # DF has 5 rows and 25 columns (indexed by integer)
@@ -59,6 +59,11 @@ def main():
     sorted_by_gross['Gross Earnings'].head(10).plot(kind="barh")
     # save the figure as stackedbar.png
     plt.savefig("/home/student/static/stackedbar.png", bbox_inches='tight')
+
+    html = movies.to_html()
+    text_file = open("index.html", "w")
+    text_file.write(html)
+    text_file.close()
 
 if __name__ == "__main__":
     main()
